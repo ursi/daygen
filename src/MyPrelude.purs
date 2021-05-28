@@ -5,7 +5,7 @@ module MyPrelude
   , indexIn
   , fix
   , enumerate
-  , debugSpy
+  -- , debugSpy
   ) where
 
 import Data.Void
@@ -254,10 +254,10 @@ import Data.Monoid (class Monoid, mempty)
 import Data.Semigroup ((<>))
 import Data.Array (uncons)
 
-import Debug.Trace (class DebugWarning, spy)
+-- import Debug.Trace (class DebugWarning, spy)
 
-debugSpy :: forall a. DebugWarning => String -> a -> a
-debugSpy = spy
+-- debugSpy :: forall a. DebugWarning => String -> a -> a
+-- debugSpy = spy
 
 mtimes :: forall m. Monoid m => Int -> m -> m
 mtimes n m = if n <= 0 then mempty else m <> mtimes (n - 1) m
